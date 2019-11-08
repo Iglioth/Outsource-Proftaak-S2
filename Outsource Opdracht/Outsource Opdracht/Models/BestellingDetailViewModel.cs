@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OutsourceOpdracht
+namespace Outsource_Opdracht.Models
 {
-    internal class Bestelling
+    public class BestellingDetailViewModel
     {
-        public int BestellindID { get; set; }
+        public int BestellingID { get; set; }
         public string ProductNaam { get; set; }
         public int Aantal { get; set; }
         public int PrijsPerStuk { get; set; }

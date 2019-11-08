@@ -7,6 +7,6 @@ namespace OutsourceOpdracht.Interface
 {
     public interface IBestellingContext
     {
-
+        List<Bestelling> HaalBestellingOpMetKlantEmailEnBestelDatum(string klantEmail, DateTime datetime);
     }
 }
