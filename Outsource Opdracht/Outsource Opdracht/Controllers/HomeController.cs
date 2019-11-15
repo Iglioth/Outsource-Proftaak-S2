@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using iTextSharp.text;
 using Microsoft.AspNetCore.Mvc;
 using Outsource_Opdracht.Models;
+using OutsourceOpdracht;
+using OutsourceOpdracht.Converter;
+using OutsourceOpdracht.Repository;
 
 namespace Outsource_Opdracht.Controllers
 {
     public class HomeController : Controller
     {
+       
+
         public IActionResult Index()
         {
             return View();
