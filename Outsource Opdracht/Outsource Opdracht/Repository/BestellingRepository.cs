@@ -19,7 +19,7 @@ namespace OutsourceOpdracht.Repository
 
         public BestellingRepository(IBestellingContext context)
         {
-            this.context = context ?? throw new NotImplementedException("IBestellingContext is leeg");
+            this.context = context;
         }
 
         public Document HaalBestellingOpMetKlantEmailEnBestelDatum(string klantEmail, DateTime dateTime)
@@ -66,11 +66,11 @@ namespace OutsourceOpdracht.Repository
             writer.CloseStream = false;
             doc.Close();
 
-            MailMessage message = new MailMessage("Axi@domain.com", bestellingen[0].KlantEmail, "Pdf mail", "Bedankt voor uw aankoop bij Axi, in de bijlage van deze email vindt u uw bonnetje");
+            MailMessage message = new MailMessage("Axi@domain.com", "Iglioth@gmail.com", "Pdf mail", "Bedankt voor uw aankoop bij Axi, in de bijlage van deze email vindt u uw bonnetje");
             Attachment pdf = new Attachment(memoryStream, "test.pdf");
 
             memoryStream.Position = 0;
-            message.Attachments.Add(new Attachment(@"c:\pdftoattach.pdf"));
+            message.Attachments.Add(pdf);
 
             SmtpClient client2 = new SmtpClient();
             client2.Send(message);

@@ -1,0 +1,21 @@
+﻿@model BestellingDetailViewModel
+@{
+    ViewData["Title"] = "Pdf";
+}
+
+<h2>Pdf</h2>
+<form asp-action="Pdf">
+    <div class="form-group">
+        <label asp-for="KlantEmail"></label>
+        <input asp-for="KlantEmail" />
+        <span asp-validation-for="KlantEmail"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="BestelDatum"></label>
+        <input asp-for="BestelDatum" type="date"/>
+        <span asp-validation-for="BestelDatum"></span>
+    </div>
+
+    <input type="submit" value="Pdf versturen" class="btn btn-default" />
+</form>

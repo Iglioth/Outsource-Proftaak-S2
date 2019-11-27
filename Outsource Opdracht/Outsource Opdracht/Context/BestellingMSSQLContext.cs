@@ -11,7 +11,7 @@ namespace OutsourceOpdracht.Context
     {
         public List<Bestelling> HaalBestellingOpMetKlantEmailEnBestelDatum(string klantEmail, DateTime datetime)
         {
-            string sql = "Select * From Bestellingen Where KlantEmail = @klantEmail and BestelDatum = @BestelDatum";
+            string sql = "Select * From Bestelling Where KlantEmail = @klantEmail and BestelDatum = @BestelDatum";
             List<KeyValuePair<object, object>> parameters = new List<KeyValuePair<object, object>>();
             parameters.Add(new KeyValuePair<object, object>("klantEmail", klantEmail));
             parameters.Add(new KeyValuePair<object, object>("BestelDatum", datetime));

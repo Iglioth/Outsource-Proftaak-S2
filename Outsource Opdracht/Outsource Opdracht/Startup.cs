@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OutsourceOpdracht.Context;
+using OutsourceOpdracht.Interface;
+using OutsourceOpdracht.Repository;
 
 namespace Outsource_Opdracht
 {
@@ -31,6 +34,9 @@ namespace Outsource_Opdracht
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<IBestellingContext, BestellingMSSQLContext>();
+
+            services.AddScoped<BestellingRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -36,17 +36,16 @@ namespace OutsourceOpdracht.Controllers
         [HttpGet]
         public IActionResult Pdf()
         {
-            return View();
+            return View("Bestelling");
         }
 
         [HttpPost]
-        public IActionResult Pdf(BestellingDetailViewModel vm)
+        public IActionResult Pdf(string KlantEmail, DateTime BestelDatum)
         {
-            Bestelling bestelling = vmc.ViewModelToBestelling(vm);
-            Document doc = repo.HaalBestellingOpMetKlantEmailEnBestelDatum(bestelling.KlantEmail, bestelling.BestelDatum);
+            Document doc = repo.HaalBestellingOpMetKlantEmailEnBestelDatum(KlantEmail, BestelDatum);
             return View();
         }
-        //Haalt Bestellingen op
+        
     }
 }
 
