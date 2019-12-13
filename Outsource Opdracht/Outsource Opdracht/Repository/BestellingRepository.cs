@@ -66,14 +66,22 @@ namespace OutsourceOpdracht.Repository
             writer.CloseStream = false;
             doc.Close();
 
+
+
+
+            
+            //Gebruik hier je eigen server. Als het goed is moet het dan werken.
             MailMessage message = new MailMessage("Axi@domain.com", "Iglioth@gmail.com", "Pdf mail", "Bedankt voor uw aankoop bij Axi, in de bijlage van deze email vindt u uw bonnetje");
+
+            //Kies de naam voor de pdf die je mee wil sturen
             Attachment pdf = new Attachment(memoryStream, "test.pdf");
 
             memoryStream.Position = 0;
             message.Attachments.Add(pdf);
 
+            //Kies hier welke mail het opstuurd en met welke port.
             SmtpClient client2 = new SmtpClient("smtp.gmail.com", 587);
-            client2.Send(message);
+            client2.Send(message);            
 
             return doc;
         }

@@ -7,7 +7,9 @@ namespace OutsourceOpdracht.Context
 {
     public class BaseMSSQLContext
     {
+        //Gebruik hier je eigen connectiestring
         string connectionString = "Server=mssql.fhict.local;Database=dbi390337_outpdfmail;User Id=dbi390337_outpdfmail;Password=outpdfmail;";
+
         public DataSet ExecuteSql(string sql, List<KeyValuePair<object, object>> parameters)
         {
             DataSet ds = new DataSet();
