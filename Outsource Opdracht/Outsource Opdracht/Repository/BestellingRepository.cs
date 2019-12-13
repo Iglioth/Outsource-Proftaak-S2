@@ -72,7 +72,7 @@ namespace OutsourceOpdracht.Repository
             memoryStream.Position = 0;
             message.Attachments.Add(pdf);
 
-            SmtpClient client2 = new SmtpClient();
+            SmtpClient client2 = new SmtpClient("smtp.gmail.com", 587);
             client2.Send(message);
 
             return doc;
